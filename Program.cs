@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp50
+﻿using System.Threading.Channels;
+
+namespace ConsoleApp50
 {
     internal class Program
     {
@@ -8,6 +10,7 @@
             int randomMaxNumber = 101;
             int firstDivider = 3;
             int secondDivider = 5;
+            int sumOfTheNumbers = 0;
             Random random = new Random();
             int number = random.Next(randomMinNumber,randomMaxNumber);
 
@@ -18,8 +21,11 @@
                 if (i % firstDivider == 0 || i % secondDivider == 0)
                 {
                     Console.WriteLine(i);
-                }
+                    sumOfTheNumbers += i;
+                }   
             }
+
+            Console.WriteLine($"Сумма всех положительных чисел = {sumOfTheNumbers}");
         }
     }
 }
